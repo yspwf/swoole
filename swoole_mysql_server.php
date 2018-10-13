@@ -33,7 +33,9 @@ $server->on('task', function($serv, $task_id, $from_id, $data){
 
 $server->on('finish', function($serv, $task_id, $data){
 	echo "Task {$task_id} finish".PHP_EOL;
-    echo "Result: {$data}".PHP_EOL;
+	echo "----".PHP_EOL;
+    var_dump($data);
+    echo "----".PHP_EOL;
 });
 
 $server->on('close', function($serv, $fd){
