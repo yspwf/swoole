@@ -5,9 +5,10 @@ class SwooleServer{
 
 	public function __construct(){
 		$this->serv = new swoole_server("127.0.0.1", 9502);
-		$this->serv->set(
-			'worker_num'=>8,
-			'task_worker_num'=>8
+		$this->serv->set([
+				'worker_num'=>8,
+				'task_worker_num'=>8
+			]
 		);
 
 		$this->serv->on('connect', array($this,'onConnect'));
