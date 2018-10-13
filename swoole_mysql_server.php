@@ -20,7 +20,7 @@ $server->on('receive', function($serv, $fd, $reactor_id, $data){
 	$res = $serv->task(json_encode($params));
 	echo "------".$res.PHP_EOL;
 	echo "Continue Handle Worker".PHP_EOL;
-	$serv->close($fd);
+	//$serv->close($fd);
 });
 
 $server->on('task', function($serv, $task_id, $from_id, $data){
