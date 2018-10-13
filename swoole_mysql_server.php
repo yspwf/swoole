@@ -40,8 +40,8 @@ class SwooleServer{
 		echo "task  ".PHP_EOL;
 		var_dump($data);
 		echo "over  ".PHP_EOL;
-		$fd = json_decode($data, true)['fd'];
-		$serv->send($fd, "swoole task data: 1,2,3,4,5,6...");
+		$fd = json_decode($data, true);
+		$serv->send($fd['fd'], "swoole task data: 1,2,3,4,5,6...");
 		//return "task over";
 		$serv->finish($data);
 	}
