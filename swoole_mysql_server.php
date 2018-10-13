@@ -24,10 +24,12 @@ $server->on('receive', function($serv, $fd, $reactor_id, $data){
 });
 
 $server->on('task', function($serv, $task_id, $from_id, $data){
-	echo "task".PHP_EOL;
+	echo "task  ".PHP_EOL;
+	var_dump($data);
+	echo "over  ".PHP_EOL;
 	$fd = json_decode($data, true)['fd'];
 	$serv->send($fd, "swoole task data: 1,2,3,4,5,6...");
-	return "task over";
+	//return "task over";
 	$serv->finish($data);
 });
 
