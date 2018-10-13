@@ -7,7 +7,7 @@ $server->set([
 ]);
 
 $server->on('connect', function($serv, $fd){
-	echo "connect fd : {$fd}";
+	echo "connect fd : {$fd}".PHP_EOL;
 });
 
 $server->on('receive', function($serv, $fd, $reactor_id, $data){
@@ -24,7 +24,7 @@ $server->on('receive', function($serv, $fd, $reactor_id, $data){
 });
 
 $server->on('task', function($serv, $task_id, $from_id, $data){
-	echo "task";
+	echo "task".PHP_EOL;
 	$fd = json_decode($data, true)['fd'];
 	$serv->send($fd, "swoole task data: 1,2,3,4,5,6...");
 	return "task over";
@@ -37,7 +37,7 @@ $server->on('finish', function($serv, $task_id, $data){
 });
 
 $server->on('close', function($serv, $fd){
-	echo "client close: {$fd}";
+	echo "client close: {$fd}".PHP_EOL;
 });
 
 $server->start();
