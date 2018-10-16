@@ -33,6 +33,10 @@ $server->on('task', function($serv, $fd, $task_id, $data){
 	echo $data.PHP_EOL;
 });
 
+$server->on('finish', function($serv, $fd){
+	echo "close task {$fd}".PHP_EOL;
+});
+
 $server->on('close', function($serv, $fd){
 	echo "client close".PHP_EOL;
 });
