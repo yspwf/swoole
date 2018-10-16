@@ -20,6 +20,7 @@ $server->on('receive', function($serv, $fd, $reactor_id, $data){
 
     $demo = new Demo();
     $data = $demo->test();
+    echo "-------".PHP_EOL; 
     echo $data.PHP_EOL;
     echo "-------".PHP_EOL; 
 
@@ -35,7 +36,7 @@ $server->on('task', function($serv, $fd, $task_id, $data){
 });
 
 $server->on('finish', function($serv, $task_id, $data){
-	echo "close task {$fd}".PHP_EOL;
+	echo "finish task {$task_id}".PHP_EOL;
 });
 
 $server->on('close', function($serv, $fd){
