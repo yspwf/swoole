@@ -25,7 +25,7 @@ $server->on('receive', function($serv, $fd, $reactor_id, $data){
     echo "-------".PHP_EOL; 
 
 	$serv->send($fd,'data  received');
-	$serv->task("task data");
+	$serv->task("33333333");
 	$serv->close($fd);
 });
 
