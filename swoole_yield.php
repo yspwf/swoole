@@ -17,6 +17,27 @@ $http->on("request", function($req, $res){
 	}
 	//var_dump($req);
 
+	var_dump('stime: '. microtime(true));
+
+	$db = new Swoole\Coroutine\Mysql();
+	var_dump('new:' .microtime(true));
+
+	$server = array(
+		'host' => '127.0.0.1',
+		'user' => 'root',
+		'password' => 'root',
+		'database' => 'demo'
+	);
+    
+	var_dump('connect:'. microtime(true));
+
+	$info = $db->query('select 1+1');
+	var_dump($info);
+
+	$res->end('ok');
+
+
+    /*
 	var_dump("stime:". microtime(true));
 
 	$client = new Swoole\Coroutine\Client(SWOOLE_SOCK_TCP);
@@ -25,7 +46,7 @@ $http->on("request", function($req, $res){
 	if(!$client->connect('0.0.0.0', 9503, 0.5)){
 		return $res->end('swoole response error:'. $client->errCode);
 	}
-
+    
 	var_dump("connect :" . microtime(true));
 
 	$client->send("hello YSP \r\n");
@@ -39,6 +60,7 @@ $http->on("request", function($req, $res){
 
 	$res->write("hello swoole !!!");
 	$res->end();
+	*/
 });
 
 $http->start();
