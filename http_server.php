@@ -20,9 +20,14 @@ $server->on('receive', function($serv, $fd, $reactor_id, $data){
 
     $demo = new Demo();
     $data = $demo->test();
-    echo "-------".PHP_EOL; 
+    echo "function -------".PHP_EOL; 
     echo $data.PHP_EOL;
-    echo "-------".PHP_EOL; 
+    echo "function -------".PHP_EOL; 
+
+    echo "GET -----".PHP_EOL;
+    echo $_GET['a'];
+    echo "GET ----".PHP_EOL;
+
 
 	$serv->send($fd,'data  received');
 	$serv->task("33333333");
