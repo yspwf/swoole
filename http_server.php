@@ -12,7 +12,7 @@ $server->on('connect', function($serv, $fd){
 });
 
 $server->on('WorkerStart', function($serv, $work_id){
-	require './demo.php';
+	require  __DIR___.'/demo.php';
 });
 
 $server->on('receive', function($serv, $fd, $reactor_id, $data){
