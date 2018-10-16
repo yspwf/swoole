@@ -29,6 +29,8 @@ $http->on("request", function($req, $res){
 		'database' => 'demo'
 	);
     
+    $re1 = $db->connect($server);
+
 	var_dump('connect:'. microtime(true));
 
 	$info = $db->query('select 1+1');
