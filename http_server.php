@@ -1,6 +1,6 @@
 <?php 
 
-$server = new Swoole\Server("0.0.0.0", 9503);
+$server = new swoole_server("0.0.0.0", 9503);
 
 $server->on('connect', function($serv, $fd){
 	echo "client connect: {$fd}";
