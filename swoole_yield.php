@@ -32,7 +32,7 @@ $http->on("request", function($req, $res){
 
 	var_dump('send:'.microtime(true));
 
-	echo "from server: " $client->recv(5);
+	echo "from server: ".$client->recv(5);
 
     var_dump('recv:' . microtime(true));
     $client->close();
