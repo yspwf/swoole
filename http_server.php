@@ -11,7 +11,7 @@ $server->on('connect', function($serv, $fd){
 	echo "client connect: {$fd}";
 });
 
-$server->on('WorkStart', function($serv, $work_id){
+$server->on('WorkerStart', function($serv, $work_id){
 	require './demo.php';
 });
 
