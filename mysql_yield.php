@@ -1,6 +1,6 @@
 <?php 
 
-$server = new Swoole\Http\Server('127.0.0.1', 9502, SWOOLE_BASE);
+$server = new Swoole\Http\Server('0.0.0.0', 9502, SWOOLE_BASE);
 
 $server->set(array(
 	'worker_num' => 1
