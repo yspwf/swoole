@@ -31,9 +31,10 @@ $server->on('receive', function($serv, $fd, $reactor_id, $data){
 
 $server->on('task', function($serv, $fd, $task_id, $data){
 	echo $data.PHP_EOL;
+	$serv->finish($data);
 });
 
-$server->on('finish', function($serv, $fd){
+$server->on('finish', function($serv, $task_id, $data){
 	echo "close task {$fd}".PHP_EOL;
 });
 
